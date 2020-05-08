@@ -11,7 +11,7 @@ alias mexe='chmod +x'
 alias texe='touchexe'
 alias ginit='git init && git remote add origin'
 alias gcommit='git commit -m'
-
+alias qgcommit='git add . && git commit -m' # Quick Git Commit
 #Adding ssh keys
 currentdir=`pwd`
 cd ~/.ssh

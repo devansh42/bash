@@ -1,8 +1,8 @@
 #!/usr/bin/bash
 
 touchexe () { #Makes a new file and makes it executable
-	touch $1
-	chmod +x $1
+	touch "$@"
+	chmod +x "$@"
 }
 
 
@@ -11,7 +11,14 @@ alias mexe='chmod +x'
 alias texe='touchexe'
 alias ginit='git init && git remote add origin'
 alias gcommit='git commit -m'
-alias qgcommit='git add . && git commit -m' # Quick Git Commit
+alias qcommit='git add . && git commit -m' # Quick Git Commit
+#Making dump did
+if ! [ -e ~/dump ];then
+	if ! [ -e /tmp/dump ];then
+		mkdir /tmp/dump
+	fi
+	ln -s /tmp/dump ~/dump
+fi
 #Adding ssh keys
 currentdir=`pwd`
 cd ~/.ssh

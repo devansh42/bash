@@ -10,9 +10,8 @@ then
 fi
 echo "Intializing newly created instance"
 apt update
-apt install docker.io
-apt install build-essential
-
+apt install -y docker.io build-essential python3-pip
+pip3 install docker-compose
 
 
 

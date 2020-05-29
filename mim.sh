@@ -2,18 +2,26 @@
 # MIM = Make It Mine
 # It customize the machine according to @devansh42
 folder=.thanos
-if [ ! -e "~/$folder" ]; then mkdir ~/.devansh42; fi
+if ! [ -d "~/$folder" ]; then mkdir ~/$folder; fi
 
 # Adding personal.sh
 
 personal() {
+    echo "Personalinzing This machine ... "
 
-    if [! -e "~/$folder/personal.sh" ]; then
-        "source ~/$folder/personal.sh" >>~/.bashrc
+    if ! [ -f "~/$folder/personal.sh" ]; then
+        cp personal.sh ~/$folder/personal.sh
+        echo "source ~/$folder/personal.sh" >>~/.bashrc
     fi
 }
 
 server() {
+    echo "Customizing this machine for server stuff"
     # Setups for server instances
-   bash server.sh       
+    bash server.sh
 }
+
+for x in $(seq $#); do
+    $($1)
+    shift 1
+done

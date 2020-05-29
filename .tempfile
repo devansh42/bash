@@ -1,8 +1,0 @@
-mkdir ~/.ssh
-
-#Generating ssh keys
-ssh-keygen -b 4096 -t rsa -f "~/.ssh/id_oppo"
-#Adding with key into authorized_key
-ssh-keygen -y -f ~/.ssh/id_oppo >>~/.ssh/authorized_key
-echo "Here is the private key"
-cat ~/.ssh/id_oppo

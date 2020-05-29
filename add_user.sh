@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 #Script to make a new user and setuping its ssh credentials
 if [ $(whoami) != "root" ]; then
     echo "Need Root Permission"

@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 touchexe () { #Makes a new file and makes it executable
 	touch "$@"
